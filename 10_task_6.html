@@ -1,0 +1,39 @@
+<html>
+    <script>
+        font = 50;
+        let myInterval = null;
+
+        function incre(){
+            if (myInterval) {
+                stop()
+            }
+            myInterval = setInterval(function (){
+                if(font <= 200){
+                    font++;
+                    document.getElementById('p1').style.fontSize = font;
+                }
+            }, 50)
+        }
+        function decre() {
+            if (myInterval) {
+                stop();
+            }
+            myInterval = setInterval(function (){
+                if(font >= 20){
+                    font = font-1;
+                    document.getElementById('p1').style.fontSize = font;
+                }
+            }, 50)
+        }
+        function stop() {
+            clearInterval(myInterval)
+        }
+    </script>
+    <body>
+    <p id="p1" style="font-size: 50;">Hello</p>
+    <button onclick="incre()">Increase Size</button>
+    <button onclick="decre()">Decrease Size</button>
+    <button onclick="stop()" style="color: white; background-color: red; border-radius: 5px; border-color: red;">Stop</button>
+    
+    </body>
+</html>
